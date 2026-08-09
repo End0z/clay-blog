@@ -26,14 +26,27 @@ blog/
 └── package.json
 ```
 
-## 开发
+## 快速开始
+
+**环境要求：只需要 Node.js（>= 18.20 或 20.3+ 或 22+）。不需要单独安装 Astro**——它是项目依赖，`npm install` 时会自动装好（npm 随 Node.js 一起安装）。
+
+第一次使用，按顺序执行：
 
 ```bash
+# 1. 安装 Node.js（未安装时）：到 https://nodejs.org/ 下载 LTS 版本安装
+
+# 2. 下载项目
+git clone https://github.com/laogou717/clay-blog.git
+cd clay-blog
+
+# 3. 安装依赖（自动安装 Astro）
 npm install
+
+# 4. 启动本地预览
 npm run dev
 ```
 
-本地开发默认访问 `http://localhost:4321`。
+浏览器打开 `http://localhost:4321` 即可看到博客。修改 `src/content/` 下的 Markdown 后保存，页面会热更新。
 
 ## 构建
 
@@ -84,6 +97,22 @@ Meting 是非官方接入方式，受网易云版权、VIP 与地区限制影响
 文章和随笔会在构建时生成静态页面。若使用自定义 `slug`，需要保证唯一，避免内容集合覆盖。
 
 仓库自带一组**示例文章与随笔**（`示例/`、`AI/`、`技术/` 分类），用于演示首页、分类、标签、归档、搜索与 RSS 等页面的完整效果；封面图引用图床占位图。使用前请直接删除这些示例文件，换成自己的内容。
+
+## 更换成你的博客
+
+克隆后需要改的地方，全部集中在这几个文件：
+
+| 要改的内容 | 位置 |
+| --- | --- |
+| 站点名称 / 简介 / 作者 | [src/data/site.config.json](src/data/site.config.json) 的 `siteName` / `siteDescription` / `siteAuthor` |
+| 头像 | 替换 `public/avatars/avatar.png` 与 `avatar-bw.png` |
+| GitHub 用户名与仓库链接 | [src/data/site.config.json](src/data/site.config.json) 的 `githubUser` / `githubRepo`（不想要导航栏的 GitHub 按钮，把 `githubRepo` 留空即可） |
+| 正式域名 | 复制 `.env.example` 为 `.env`，设置 `SITE_URL` |
+| 评论后端 | `.env` 的 `PUBLIC_TWIKOO_ENV_ID`（不配则评论自动隐藏） |
+| 音乐播放器歌单 | `.env` 的 `PUBLIC_NETEASE_PLAYLIST_ID` |
+| 文章与随笔 | 删除 `src/content/posts/` 下的 `示例/`、`AI/`、`技术/` 目录和 `src/content/notes/` 下的示例随笔，换成自己的 Markdown |
+
+改完 `site.config.json` 后重新 `npm run dev` 即可生效。
 
 ## 关于页自定义配置
 
@@ -137,6 +166,27 @@ curl -s "https://api.github.com/users/laogou717/repos?per_page=100" -o src/data/
 3. 选区上方会出现“引用评论”按钮。
 4. 点击按钮后页面会滚动到底部评论区，并把选中的文字以 Markdown blockquote 写入评论框。
 5. 发送成功后页面会回到刚才的阅读位置。
+
+## 常见问题
+
+**没装过 Node.js 怎么办？**
+到 https://nodejs.org/ 下载 LTS 版本安装，npm 会一并装好，然后回到「快速开始」从第 3 步继续。
+
+**Astro 需要单独安装吗？**
+不需要。Astro 是 `package.json` 里的依赖，`npm install` 自动安装，无需全局安装任何东西。
+
+**`npm install` 很慢 / 失败？**
+国内网络可切换到镜像源：
+
+```bash
+npm config set registry https://registry.npmmirror.com
+```
+
+**提示 Node 版本太低？**
+Astro 5 要求 Node 18.20.8+ / 20.3.0+ / 22.0.0+，升级 Node.js 后重试。
+
+**端口被占用？**
+`npm run dev -- --port 4322` 指定其他端口。
 
 ## 许可证
 

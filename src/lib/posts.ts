@@ -1,12 +1,13 @@
 import type { CollectionEntry } from 'astro:content';
+import siteConfig from '../data/site.config.json';
 
 export type BlogPost = CollectionEntry<'posts'>;
 
 export const site = {
-  name: '段枫的博客',
-  description: '记录 AI、代码、网站搭建和技术观察。',
+  name: siteConfig.siteName,
+  description: siteConfig.siteDescription,
   url: import.meta.env.SITE_URL ?? 'https://example.com',
-  author: '段枫',
+  author: siteConfig.siteAuthor,
 };
 
 const getTime = (date?: Date) => date?.getTime() ?? 0;
