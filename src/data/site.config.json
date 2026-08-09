@@ -1,0 +1,29 @@
+{
+  "githubUser": "laogou717",
+  "githubRepo": "https://github.com/laogou717/clay-blog",
+  "projectOverrides": {
+    "md-wechat": {
+      "icon": "wechat"
+    },
+    "Steam-game-cover-gets": {
+      "icon": "download"
+    }
+  },
+  "projectGroups": [
+    {
+      "title": "资源下载",
+      "description": "文章里提到的网盘、脚本和可复用资料，可在本文件中增删条目或整组。",
+      "items": [
+        {
+          "title": "静态站点部署实践",
+          "owner": "Blog",
+          "description": "示例资源条目：静态博客部署到主流托管平台的通用步骤。",
+          "icon": "globe",
+          "href": "/posts/技术/deploy-static/",
+          "article": "/posts/技术/deploy-static/",
+          "tags": ["部署", "示例"]
+        }
+      ]
+    }
+  ]
+}
