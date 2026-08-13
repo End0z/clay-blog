@@ -4,7 +4,8 @@ import rehypeLegacyShortcodes from './src/lib/rehype-legacy-shortcodes.mjs';
 import remarkLegacyShortcodes from './src/lib/remark-legacy-shortcodes.mjs';
 
 export default defineConfig({
-  site: process.env.SITE_URL ?? 'https://example.com',
+  base: '/blog/',
+  site: process.env.SITE_URL ?? 'https://mahiru.ccwu.cc',
   redirects: {
     '/projects': '/about',
   },
