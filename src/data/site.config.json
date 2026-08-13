@@ -1,8 +1,8 @@
 {
-  "siteName": "段枫的博客",
-  "siteDescription": "记录 AI、代码、网站搭建和技术观察。",
-  "siteAuthor": "段枫",
-  "githubUser": "laogou717",
+  "siteName": "CandyStar的博客",
+  "siteDescription": "我的日记而已",
+  "siteAuthor": "CandyStar",
+  "githubUser": "End0z",
   "githubRepo": "https://github.com/laogou717/clay-blog",
   "projectOverrides": {
     "md-wechat": {
