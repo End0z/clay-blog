@@ -3,6 +3,7 @@ title: "你好，世界"
 description: "CandyStar博客，从这一篇开始。"
 date: "2026-08-13"
 sticky: 1
+cover: public/covers/6f907a94a2afa830281dbfca13e22cb6.jpg
 tags:
   - 日常
   - 开站
