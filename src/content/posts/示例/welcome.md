@@ -2,7 +2,7 @@
 title: "欢迎来到示例博客"
 description: "这是一个开源的博客模板，本文是一篇示例文章，用于演示博客的布局、排版与各项功能。"
 date: "2025-11-20"
-cover: https://image.laogou717.com/file/image/blog/2024/PmOX0CTC.jpg
+cover: https://i.postimg.cc/KvTX6wFM/6f907a94a2afa830281dbfca13e22cb6.jpg
 categories: 示例
 sticky: 2
 tags:
